@@ -64,29 +64,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter
 	@Override
 	protected void configure(HttpSecurity http) throws Exception
 	{
-		// http.cors().and().csrf().disable()
-		// // .exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
-		// // .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
-		// .authorizeRequests()
-		// // .antMatchers("/employee/admin").hasRole("ADMIN")
-		// // .antMatchers("/employee/user").hasAnyRole("ADMIN","USER")
-		// .antMatchers("/api/signin").permitAll()
-		// // .antMatchers("/employee/all").permitAll()
-		// .antMatchers("/api/signup/admin").permitAll()
-		// .antMatchers("/api/signup/user").permitAll()
-		// .anyRequest().authenticated();
-		//
-		// http.addFilterBefore(authTokenFiltera(), UsernamePasswordAuthenticationFilter.class);
 
 		http.cors().and().csrf().disable()
 				// .exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
 				// .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
 				.authorizeRequests()
-				// .antMatchers("/employee/admin").hasRole("ADMIN")
-				// .antMatchers("/employee/user").hasAnyRole("ADMIN","USER")
+
 				.antMatchers("/api/signin").permitAll()
-				// .antMatchers("/api/**").permitAll()
-				// .antMatchers("/all").permitAll()
+
 				.antMatchers("/swagger-ui/**").permitAll()
 				.antMatchers("/api/signup/admin").permitAll()
 				.antMatchers("/api/signup/user").permitAll()
@@ -94,4 +79,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter
 
 		http.addFilterBefore(authTokenFilter(), UsernamePasswordAuthenticationFilter.class);
 	}
+
+	// @Override
+	// public void configure(WebSecurity web) throws Exception
+	// {
+	// web.ignoring().antMatchers("/v2/api-docs",
+	// "/configuration/ui",
+	// "/swagger-resources/**",
+	// "/configuration/security",
+	// "/swagger-ui.html",
+	// "/webjars/**");
+	// }
 }

@@ -16,7 +16,7 @@ public interface ProductService
 	// @Valid left
 	Product updateProduct(long id, ProductModel productModel);
 
-	public List<Product> search(String cnb);
+	public List<Product> searchProduct(String cnb);
 
 	public List<Product> filterByPrice(int min, int max);
 }

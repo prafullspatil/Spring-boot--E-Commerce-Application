@@ -14,7 +14,7 @@ public interface ProductRepository extends JpaRepository<Product, Long>
 	boolean existsByModelNo(String modelNo);
 
 	@Query("SELECT p FROM Product p WHERE CONCAT(p.productName, p.category, p.brandName) LIKE %?1%")
-	public List<Product> search(String keyword);
+	public List<Product> searchProduct(String cnb);
 
 	@Query(value = "SELECT * FROM product  WHERE price BETWEEN(?1) AND (?2)", nativeQuery = true)
 	public List<Product> filterByPriceRange(int max, int min);

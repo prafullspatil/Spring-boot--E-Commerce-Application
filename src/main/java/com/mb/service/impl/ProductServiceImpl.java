@@ -62,11 +62,11 @@ public class ProductServiceImpl implements ProductService
 	}
 
 	@Override
-	public List<Product> search(String cnb)
+	public List<Product> searchProduct(String cnb)
 	{
 		if (cnb != null)
 		{
-			return productRepository.search(cnb);
+			return productRepository.searchProduct(cnb);
 		}
 		return productRepository.findAll();
 	}

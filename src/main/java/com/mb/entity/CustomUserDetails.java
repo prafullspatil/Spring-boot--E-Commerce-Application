@@ -33,7 +33,7 @@ public class CustomUserDetails implements UserDetails
 		List<GrantedAuthority> authority = user.getRoles().stream()
 				.map(role -> new SimpleGrantedAuthority(role.getName())).collect(Collectors.toList());
 
-		return new CustomUserDetails(user.getId(), user.getUserName(), user.getPassword(), authority);
+		return new CustomUserDetails(user.getId(), user.getEmail(), user.getPassword(), authority);
 	}
 
 	@Override

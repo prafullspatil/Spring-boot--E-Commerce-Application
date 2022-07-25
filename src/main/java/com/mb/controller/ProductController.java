@@ -25,21 +25,21 @@ public class ProductController
 	@Autowired
 	private ProductService productService;
 
-	@PostMapping("/saveproduct")
+	@PostMapping("/save-product")
 	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	public Product saveProduct(@RequestBody ProductModel productModel)
 	{
 		return productService.saveProduct(productModel);
 	}
 
-	@GetMapping("/getall")
+	@GetMapping("/get-all-product")
 	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	public List<Product> getProductDetails(ProductModel productModel)
 	{
 		return productService.getProductDetails();
 	}
 
-	@DeleteMapping("/deleteproduct/{id}")
+	@DeleteMapping("/delete-product/{id}")
 	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	public String deleteProduct(@PathVariable("id") long id)
 	{
@@ -47,7 +47,7 @@ public class ProductController
 		return "Deleted Successfully";
 	}
 
-	@PutMapping("/updateproduct/{id}")
+	@PutMapping("/update-product/{id}")
 	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	public ResponseEntity<?> updateProduct(@PathVariable long id,
 			@RequestBody ProductModel productModel)
@@ -67,16 +67,16 @@ public class ProductController
 
 	@PreAuthorize("hasRole('ROLE_USER')")
 	@GetMapping("/search/{cnb}")
-	public List<Product> Search(@PathVariable(name = "cnb") String cnb)
+	public List<Product> searchProduct(@PathVariable(name = "cnb") String cnb)
 	{
 		System.out.println(cnb);
-		List<Product> listProducts = productService.search(cnb);
+		List<Product> listProducts = productService.searchProduct(cnb);
 		return listProducts;
 	}
 
 	// filter products by price range,
 	@PreAuthorize("hasRole('ROLE_USER')")
-	@GetMapping("/filter/{min}/{max}")
+	@GetMapping("/filter-product/{min}/{max}")
 	public List<Product> filterByPrice(@PathVariable int min, @PathVariable int max)
 	{
 		return productService.filterByPrice(min, max);

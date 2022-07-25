@@ -48,7 +48,7 @@ public class UserController
 	// }
 
 	@PreAuthorize("hasRole('ROLE_USER')")
-	@PutMapping("/updateuser/{id}")
+	@PutMapping("/update-user/{id}")
 	public ResponseEntity<SuccResponse> updateUser(@PathVariable long id,
 			@RequestBody SignUpModel signUpModel)
 	{
@@ -61,7 +61,7 @@ public class UserController
 	}
 
 	@PreAuthorize("hasRole('ROLE_USER')")
-	@GetMapping("/userdetails/{id}")
+	@GetMapping("/user-details/{id}")
 	public ResponseEntity<?> getUserById(@PathVariable("id") long id)
 	{
 
