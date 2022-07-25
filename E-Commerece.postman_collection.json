@@ -1,0 +1,425 @@
+{
+	"info": {
+		"_postman_id": "a4bf86be-2a90-4f12-999a-642eaeae9579",
+		"name": "E-Commerece",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21123615"
+	},
+	"item": [
+		{
+			"name": "ADMIN",
+			"item": [
+				{
+					"name": "http://localhost:9091/api/v1/product/get-all-product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9091/api/v1/product/get-all-product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"api",
+								"v1",
+								"product",
+								"get-all-product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:9091/api/v1/product/save-product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9091/api/v1/product/save-product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"api",
+								"v1",
+								"product",
+								"save-product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:9091/api/v1/product/delete-product/11",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9091/api/v1/product/delete-product/11",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"api",
+								"v1",
+								"product",
+								"delete-product",
+								"11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:9091/api/v1/product/update-product/4",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9091/api/v1/product/update-product/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"api",
+								"v1",
+								"product",
+								"update-product",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "USER",
+			"item": [
+				{
+					"name": "http://localhost:9091/api/user-details/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9091/api/user-details/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"api",
+								"user-details",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:9091/api/update-user/",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9091/api/update-user/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"api",
+								"update-user",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:9091/api/v1/product/search/TV",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9091/api/v1/product/search/TV",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"api",
+								"v1",
+								"product",
+								"search",
+								"TV"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:9091/api/v1/product/filter-product/63000/64000",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9091/api/v1/product/filter-product/63000/64000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"api",
+								"v1",
+								"product",
+								"filter-product",
+								"63000",
+								"64000"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:9091/api/v1/cart/items",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9091/api/v1/cart/items",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"api",
+								"v1",
+								"cart",
+								"items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:9091/api/v1/cart/add-to-cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"productId\": 8,\n    \"userId\": 1,\n    \"quantity\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9091/api/v1/cart/add-to-cart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"api",
+								"v1",
+								"cart",
+								"add-to-cart"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "http://localhost:9091/api/signup/user",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer    eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbm5uQGdtYWlsLmNvbSIsImlhdCI6MTY1Nzg5Njc3NiwiZXhwIjoxNjU3OTgzMTc2LCJyb2xlcyI6IlJPTEVfQURNSU4ifQ.q25pZJD5clawHEqrSHIjUeP5Hs3mCKt4pesw4wozOdzicbwewkjqJCFLag7T6DbFrOnxi-E5RIBTKmLJlpE7Og",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userName\": \"user2\",\n    \"email\": \"user2@gmail.com\",\n    \"password\": \"Aman@123\",\n    \"mobileNo\": \"8483850810\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9091/api/signup/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"api",
+						"signup",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9091/api/signin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"user2@gmail.com\",\n    \"password\": \"Aman@123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9091/api/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"api",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9091/api/user",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMiIsImlhdCI6MTY1ODU4NzkyOSwiZXhwIjoxNjU4Njc0MzI5LCJyb2xlcyI6IlJPTEVfVVNFUiJ9.pGaImoUkZ0Ay1wmQv_Q4DgVx9bQ6X8bZNDPg3mNy5OziZOy9IFctQ-sQ2JNGL1N4Bwp-D2js1FAIyTDmiJKF0w",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n     \n    \"email\": \"admin38@gmail.com\",\n    \"mobileNo\": \"8494447388\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9091/api/updateuser/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"api",
+						"updateuser",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9091/api/signup/admin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userName\": \"prafull\",\n    \"email\": \"prafull@gmail.com\",\n    \"password\": \"prafull@123\",\n    \"mobileNo\": \"9594447388\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9091/api/signup/admin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"api",
+						"signup",
+						"admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9091/api/admin",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwcmFmdWxsIiwiaWF0IjoxNjU3OTc0MTI5LCJleHAiOjE2NTgwNjA1MjksInJvbGVzIjoiUk9MRV9BRE1JTiJ9.Sl_4MG2sZZu2lgwNaJ6T564ftn2XHq9yUrSI62QWo8cgrCl1hMIriIc-_h64Xb4-G-SV6M34pKjcQt6d7QX-tA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n      \"modelNo\":\"AERDC546\",\n    \"productName\":\"Apple iphone 12\",\n    \"category\":\"Mobile\",\n    \"brandName\":\"Apple\",\n    \"description\":\"5.5 inch screen display\",\n    \"price\":64000,\n    \"qty\":8\n  \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9091/api/v1/product/saveProduct",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"api",
+						"v1",
+						"product",
+						"saveProduct"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
