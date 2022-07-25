@@ -1,10 +1,13 @@
 package com.mb.model;
 
+import com.mb.validation.ValidPassword;
+
 public class SignUpModel
 {
 
 	private String userName;
 
+	@ValidPassword
 	private String password;
 
 	private String email;

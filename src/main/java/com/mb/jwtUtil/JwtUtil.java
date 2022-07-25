@@ -31,11 +31,11 @@ public class JwtUtil
 
 	public String generateJwtToken(Authentication authentication)
 	{
-		CustomUserDetails userPrincipal = (CustomUserDetails) authentication.getPrincipal();
+		CustomUserDetails customUserPrincipal = (CustomUserDetails) authentication.getPrincipal();
 		String authorities = authentication.getAuthorities().stream().map(GrantedAuthority::getAuthority).collect(Collectors.joining(","));
 
 		return Jwts.builder()
-				.setSubject(userPrincipal.getUsername())
+				.setSubject(customUserPrincipal.getUsername())
 				.setIssuedAt(new Date(System.currentTimeMillis()))
 				.setExpiration(new Date((new Date().getTime() + jwtExpirationMs)))
 				.claim("roles", authorities)
@@ -101,4 +101,5 @@ public class JwtUtil
 		return false;
 
 	}
+
 }

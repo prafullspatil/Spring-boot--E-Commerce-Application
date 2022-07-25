@@ -1,11 +1,11 @@
 package com.mb.response;
 
-public class ValidatioErrorResponse
+public class ValidationErrorResponse
 {
 	private String fieldName;
 	private String message;
 
-	public ValidatioErrorResponse(String fieldName, String message)
+	public ValidationErrorResponse(String fieldName, String message)
 	{
 		super();
 		this.fieldName = fieldName;

@@ -34,7 +34,7 @@ public class SuccResponse
 	}
 
 	public ResponseEntity<Object> validationErrorsResponse(String message,
-			List<ValidatioErrorResponse> validationErros)
+			List<ValidationErrorResponse> validationErros)
 	{
 
 		ErrorResponse error = new ErrorResponse(new Date(), message, "cant proceed", HttpStatus.NOT_ACCEPTABLE.value(), message);

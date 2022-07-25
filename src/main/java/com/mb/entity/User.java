@@ -1,6 +1,7 @@
 package com.mb.entity;
 
 import java.util.Set;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -10,10 +11,15 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+import com.mb.model.Auditable;
 
 @Entity
-public class User
+@Table(name = "user")
+public class User extends Auditable
 {
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
@@ -27,28 +33,28 @@ public class User
 	@Column(name = "email", unique = true)
 	private String email;
 
-	@Column(name = "mobile_no", unique = true)
+	@Column(name = "mobile_no")
 	private String mobileNo;
 
-	@ManyToMany(fetch = FetchType.EAGER)
+	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinTable(name = "user_role", joinColumns = {@JoinColumn(name = "user_id")}, inverseJoinColumns = {@JoinColumn(name = "role_id")})
 	private Set<Role> roles;
 
-	public User()
-	{
+	// public User()
+	// {
+	//
+	// }
 
-	}
-
-	public User(long id, String userName, String password, String email, String mobileNo)
-	{
-		super();
-		this.id = id;
-		this.userName = userName;
-		this.password = password;
-		this.email = email;
-		this.mobileNo = mobileNo;
-
-	}
+	// public User(long id, String userName, String password, String email, String mobileNo)
+	// {
+	// super();
+	// this.id = id;
+	// this.userName = userName;
+	// this.password = password;
+	// this.email = email;
+	// this.mobileNo = mobileNo;
+	//
+	// }
 
 	public long getId()
 	{

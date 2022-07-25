@@ -36,7 +36,7 @@ public class AuthController
 	{
 		SuccResponse responseModel = SuccResponse.getInstance();
 		responseModel.setData(userService.signUpAdmin(model));
-		responseModel.setMessage("User Registered Successfully");
+		responseModel.setMessage("Admin Registered Successfully");
 		responseModel.setStatusCode(HttpStatus.OK.value());
 
 		return new ResponseEntity<SuccResponse>(responseModel, HttpStatus.ACCEPTED);
@@ -47,7 +47,7 @@ public class AuthController
 	{
 		SuccResponse model = SuccResponse.getInstance();
 		model.setData(userService.signIn(login));
-		model.setMessage("User login successfull");
+		model.setMessage("login successfull");
 		model.setStatusCode(HttpStatus.OK.value());
 
 		return new ResponseEntity<SuccResponse>(model, HttpStatus.ACCEPTED);

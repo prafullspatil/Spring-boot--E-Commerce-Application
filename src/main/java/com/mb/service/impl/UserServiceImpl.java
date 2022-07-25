@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 import org.modelmapper.ModelMapper;
@@ -39,7 +40,7 @@ public class UserServiceImpl implements UserService
 	private BCryptPasswordEncoder passwordEncoder;
 
 	@Autowired
-	private ModelMapper mappper;
+	private ModelMapper modelMapper;
 
 	@Autowired
 	private JwtUtil jwtUtil;
@@ -64,7 +65,7 @@ public class UserServiceImpl implements UserService
 
 			roles.add(userRole);
 
-			user = mappper.map(userSignup, User.class);
+			user = modelMapper.map(userSignup, User.class);
 
 			user.setPassword(passwordEncoder.encode(userSignup.getPassword()));
 
@@ -94,7 +95,7 @@ public class UserServiceImpl implements UserService
 
 			roles.add(userRole);
 
-			user = mappper.map(adminSignup, User.class);
+			user = modelMapper.map(adminSignup, User.class);
 
 			user.setPassword(passwordEncoder.encode(adminSignup.getPassword()));
 
@@ -130,6 +131,67 @@ public class UserServiceImpl implements UserService
 		data.put("roles", roles);
 
 		return data;
+	}
+
+	@Override
+	public User updateUser(long id, SignUpModel signUpModel)
+	{
+
+		// Employee empDB = employeeRepository.findById(id).get();
+		//
+		// if (Objects.nonNull(employee.getEmployeeName())
+		// && !"".equalsIgnoreCase(
+		// employee.getEmployeeName()))
+		// {
+		// empDB.setEmployeeName(
+		// employee.getEmployeeName());
+		// }
+		//
+		// if (Objects.nonNull(
+		// employee.getEmployeeEmail())
+		// && !"".equalsIgnoreCase(
+		// employee.getEmployeeEmail()))
+		// {
+		// empDB.setEmployeeEmail(
+		// employee.getEmployeeEmail());
+		// }
+		//
+		// if (Objects.nonNull(employee.getSalary())
+		// && !"".equals(employee.getSalary()))
+		// {
+		// empDB.setSalary(
+		// employee.getSalary());
+		// }
+		//
+		// return employeeRepository.save(empDB);
+
+		User oldUser = userRepository.findById(id).get();
+
+		if (Objects.nonNull(signUpModel.getEmail())
+				&& !"".equalsIgnoreCase(
+						signUpModel.getEmail()))
+		{
+			oldUser.setEmail(
+					signUpModel.getEmail());
+		}
+
+		if (Objects.nonNull(signUpModel.getMobileNo())
+				&& !"".equals(signUpModel.getMobileNo()))
+		{
+			oldUser.setMobileNo(
+					signUpModel.getMobileNo());
+		}
+
+		return userRepository.save(oldUser);
+
+	}
+
+	@Override
+	public User getUserById(long id)
+	{
+
+		return userRepository.findUserById(id);
+
 	}
 
 }

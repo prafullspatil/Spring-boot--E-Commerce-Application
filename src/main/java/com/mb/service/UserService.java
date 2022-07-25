@@ -6,9 +6,19 @@ import com.mb.model.SignUpModel;
 
 public interface UserService
 {
-	User signUpUser(SignUpModel userSignup);
+	public User signUpUser(SignUpModel userSignup);
 
-	User signUpAdmin(SignUpModel adminSignup);
+	public User signUpAdmin(SignUpModel adminSignup);
 
 	Object signIn(SignInModel userLogin);
+
+	// public void initRolesAndUser();
+	//
+	// public String getEncodedPassword(String password);
+
+	User updateUser(long id, SignUpModel signUpModel);
+
+	// User Details
+	User getUserById(long id);
+
 }

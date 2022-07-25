@@ -11,7 +11,7 @@ public class ErrorResponse
 	private String details;
 	private int statusCode;
 	private String error;
-	private List<ValidatioErrorResponse> validationErrors;
+	private List<ValidationErrorResponse> validationErrors;
 
 	public ErrorResponse(Date timestamp, String message, String details, int statusCode, String error)
 	{
@@ -48,12 +48,12 @@ public class ErrorResponse
 		return error;
 	}
 
-	public List<ValidatioErrorResponse> getValidationErrors()
+	public List<ValidationErrorResponse> getValidationErrors()
 	{
 		return validationErrors;
 	}
 
-	public void setValidationErrors(List<ValidatioErrorResponse> validationErrors)
+	public void setValidationErrors(List<ValidationErrorResponse> validationErrors)
 	{
 		this.validationErrors = validationErrors;
 	}
