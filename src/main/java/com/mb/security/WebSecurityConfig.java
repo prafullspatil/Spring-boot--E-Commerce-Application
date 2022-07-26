@@ -13,8 +13,8 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import com.mb.jwtUtil.AuthEntryPointJwt;
-import com.mb.jwtUtil.AuthTokenFilter;
+import com.mb.jwt.AuthEntryPointJwt;
+import com.mb.jwt.AuthTokenFilter;
 import com.mb.service.impl.CustomUserDetailsServiceImpl;
 
 @SuppressWarnings("deprecation")

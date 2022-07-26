@@ -1,4 +1,4 @@
-package com.mb.jwtUtil;
+package com.mb.jwt;
 
 import java.util.Date;
 import java.util.stream.Collectors;

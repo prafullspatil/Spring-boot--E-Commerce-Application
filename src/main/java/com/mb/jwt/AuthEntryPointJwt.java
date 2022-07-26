@@ -1,4 +1,4 @@
-package com.mb.jwtUtil;
+package com.mb.jwt;
 
 import java.io.IOException;
 import javax.servlet.ServletException;

@@ -20,7 +20,7 @@ import com.mb.entity.CustomUserDetails;
 import com.mb.entity.Role;
 import com.mb.entity.User;
 import com.mb.exception.ResourceAlreadyExistsException;
-import com.mb.jwtUtil.JwtUtil;
+import com.mb.jwt.JwtUtil;
 import com.mb.model.SignInModel;
 import com.mb.model.SignUpModel;
 import com.mb.repository.RoleRepository;

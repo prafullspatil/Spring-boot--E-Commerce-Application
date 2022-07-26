@@ -1,5 +1,7 @@
-package com.mb.jwtUtil;
+package com.mb.jwt;
 
+import static com.mb.constant.JwtConstants.HEADER_STRING;
+import static com.mb.constant.JwtConstants.TOKEN_PREFIX;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collection;
@@ -65,9 +67,9 @@ public class AuthTokenFilter extends OncePerRequestFilter
 
 	private String parseJwt(HttpServletRequest request)
 	{
-		String headerAuth = request.getHeader("Authorization");
+		String headerAuth = request.getHeader(HEADER_STRING);
 
-		if (StringUtils.hasText(headerAuth) && headerAuth.startsWith("Bearer"))
+		if (StringUtils.hasText(headerAuth) && headerAuth.startsWith(TOKEN_PREFIX))
 		{
 			// return headerAuth.substring(7, headerAuth.length());
 			return headerAuth.replaceAll("Bearer", "");
